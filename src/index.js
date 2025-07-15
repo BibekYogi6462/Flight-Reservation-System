@@ -1,14 +1,14 @@
 const express = require('express');
-const {PORT} =  require("./config/index.js");
-
+const {ServerConfig} =  require("./config");
+const apiRoutes =  require('./routes/index.js');
 
 const app = express();
 
+app.use('/api', apiRoutes);
 
 
-
-app.listen(PORT, () => {
-    console.log(`Successfully started the server on http://localhost:${PORT} `)
+app.listen(ServerConfig.PORT, () => {
+    console.log(`Successfully started the server on http://localhost:${ServerConfig.PORT} `)
 })
 
 
