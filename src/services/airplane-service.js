@@ -4,6 +4,7 @@ const airplaneRepository = new AirplaneRepository();
 
 async function createAirplane(data) {
 try{
+console.log("Inside Services");
    const airplane = await airplaneRepository.create(data);
    return airplane;
 }catch(error){

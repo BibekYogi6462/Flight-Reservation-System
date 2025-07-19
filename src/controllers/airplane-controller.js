@@ -4,6 +4,7 @@ const {StatusCodes} = require('http-status-codes');
 
 async function createAirplane(req, res){
       try{
+            console.log("Inside Controller");
          const airplane = await AirplaneService.createAirplane({
             modelNumber: req.body.modelNumber,
             capacity: req.body.capacity
