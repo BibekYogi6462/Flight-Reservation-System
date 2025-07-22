@@ -1,6 +1,6 @@
 const { response } = require('express');
 const {AirplaneService} = require('../services');
-const {StatusCodes} = require('http-status-codes');
+const {StatusCode} = require('http-status-codes');
 const {SuccessResponse, ErrorResponse} = require('../utils/common')
 async function createAirplane(req, res){
       try{
@@ -10,12 +10,12 @@ async function createAirplane(req, res){
          });
          SuccessResponse.data = airplane;
          return res
-             .status(StatusCodes.CREATED)
+             .status(StatusCode.CREATED)
              .json(SuccessResponse)
       }catch(error){
             ErrorResponse.error = error;
         return res 
-                .status(StatusCodes.INTERNAL_SERVER_ERROR)
+                .status(error.StatusCode)
                 .json(ErrorResponse)
 
       }
