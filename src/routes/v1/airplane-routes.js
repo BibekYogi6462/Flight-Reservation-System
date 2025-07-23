@@ -26,4 +26,10 @@ router.delete(
   AirplaneController.destroyAirplane          
 );
 
+router.patch(
+  '/:id',
+  AirplaneMiddlewares.validateCreateRequest, // Optional validation
+  AirplaneController.updateAirplane
+);
+
 module.exports = router;
