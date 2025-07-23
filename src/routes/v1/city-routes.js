@@ -1,6 +1,6 @@
 const express = require('express');
 const { CityController } = require('../../controllers');
-const AirplaneMiddlewares = require('../../middlewares/airplane-middlewares');
+const CityMiddlewares = require('../../middlewares/city-middlewares');
 
 
 const router = express.Router();
@@ -8,6 +8,7 @@ const router = express.Router();
 // Route to create a new airplane
 router.post(
   '/', 
+  CityMiddlewares.validateCreateRequest,
   CityController.createCity      
 );
 
