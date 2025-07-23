@@ -12,4 +12,9 @@ router.post(
   AirplaneController.createAirplane          // Controller to handle the creation logic
 );
 
+router.get(
+  '/', 
+  AirplaneController.getAirplanes          
+);
+
 module.exports = router;
